@@ -30,11 +30,7 @@ func main() {
 			continue
 		}
 
-		vc, err := cbr.ParseValCurs(data)
-		if err != nil {
-			log.Printf("date %s: parse error: %v", dateReq, err)
-			continue
-		}
+		vc := data
 
 		for _, v := range vc.Valutes {
 			rate, err := cbr.RateForValute(v)
