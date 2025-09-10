@@ -1,5 +1,4 @@
-# Этап сборки
-FROM golang:1.22.3 AS builder
+FROM golang:1.24 AS builder
 
 WORKDIR /app
 
@@ -10,12 +9,10 @@ COPY . .
 
 RUN CGO_ENABLED=0 GOOS=linux go build -o /cbrstats ./cmd/cbrstats
 
-# Финальный образ
 FROM alpine:3.20
 
 WORKDIR /root/
 
 COPY --from=builder /cbrstats .
 
-# Точка входа
 ENTRYPOINT ["./cbrstats"]
