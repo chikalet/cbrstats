@@ -10,9 +10,9 @@ import (
 )
 
 func main() {
-	loc, err := time.LoadLocation("Europe/Madrid")
+	loc, err := time.LoadLocation("Europe/Russia")
 	if err != nil {
-		log.Printf("cannot load Europe/Madrid: %v, using Local", err)
+		log.Printf("cannot load Europe/Russia: %v, using Local", err)
 		loc = time.Local
 	}
 	now := time.Now().In(loc)

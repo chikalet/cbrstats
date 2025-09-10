@@ -1,18 +1,22 @@
-FROM golang:1.22.3 AS builder
+Здравствуйте. Меня зовут Харсиев Мухаммед, и это мои решения 3-х задач
+представленных компанией ПроКонтекст.
 
-WORKDIR /app
+1. Ответ:
+    1: MR
+    2: IF FLAG
+    3: GOTO 5
+    4: GOTO 1
+    5: ML
+    6: IF FLAG
+    7: GOTO 1
+    8: GOTO 5
+    
+2. Ответ: Начну проверку с автомата, с надписью "Красное/зеленое", так как 
+в зависимости от любого цвета который он выдаст, можно сразу узнать 2 остальных.
 
-COPY go.mod go.sum ./
-RUN go mod download
-
-COPY . .
-
-RUN CGO_ENABLED=0 GOOS=linux go build -o /cbrstats ./cmd/cbrstats
-
-FROM alpine:3.20
-
-WORKDIR /root/
-
-COPY --from=builder /cbrstats .
-
-ENTRYPOINT ["./cbrstats"]
+3. Загрузка и запуск программы:
+    1. git clone https://github.com/chikalet/cbrstats
+    2. cd cbrstats
+    3. make docker-build
+    4. make docker-run
+И вам выведется результат выполнения программы.
