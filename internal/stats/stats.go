@@ -61,3 +61,13 @@ func (a *Aggregator) Result() StatResult {
 		TotalCount:  a.count,
 	}
 }
+
+type ValCurs struct {
+	Date    string   `xml:"Date,attr"`
+	Valutes []Valute `xml:"Valute"`
+}
+
+type Valute struct {
+	CharCode string  `xml:"CharCode"`
+	Value    float64 `xml:"Value"`
+}
