@@ -2,21 +2,21 @@
 представленных компанией ПроКонтекст.
 
 1. Ответ:
-    1: MR
-    2: IF FLAG
-    3: GOTO 5
-    4: GOTO 1
-    5: ML
-    6: IF FLAG
-    7: GOTO 1
-    8: GOTO 5
+   MR
+   IF FLAG
+   GOTO 5
+   GOTO 1
+   ML
+   IF FLAG
+   GOTO 1
+   GOTO 5
     
 2. Ответ: Начну проверку с автомата, с надписью "Красное/зеленое", так как 
 в зависимости от любого цвета который он выдаст, можно сразу узнать 2 остальных.
 
 3. Загрузка и запуск программы:
-    1. git clone https://github.com/chikalet/cbrstats
-    2. cd cbrstats
-    3. make docker-build
-    4. make docker-run
+    I. git clone https://github.com/chikalet/cbrstats
+    II. cd cbrstats
+    III. make docker-build
+    IV. make docker-run
 И вам выведется результат выполнения программы.
